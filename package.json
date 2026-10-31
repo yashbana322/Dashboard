@@ -1,0 +1,10 @@
+{
+  "name": "dashboard-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "LohanLogistics Transport Brokerage & Fleet ERP",
+  "scripts": {
+    "build": "npm --prefix transport-broker/frontend install && npm --prefix transport-broker/frontend run build",
+    "dev": "npm --prefix transport-broker/frontend run dev"
+  }
+}
