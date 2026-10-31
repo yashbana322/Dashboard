@@ -1,0 +1,563 @@
+================================================================================
+          LOHAN LOGISTICS - COMPLETE OPERATIONAL MANUAL & SYSTEM GUIDE
+================================================================================
+Software: LohanLogistics Transport Brokerage ERP System
+Built For: Commercial Freight Booking, Fleet Operations, Khata & Tax Compliance
+Tech Stack: React 19 (Frontend) + Vite + TailwindCSS | Node.js + Express (Backend)
+Database: Local Persistent JSON Database Engine (backend/data/db.json)
+Network: Localhost + LAN (0.0.0.0) + Web/Cloud Ready
+Generated: October 2026
+
+--------------------------------------------------------------------------------
+TABLE OF CONTENTS
+--------------------------------------------------------------------------------
+1.  OVERVIEW: WHAT WE BUILT
+2.  GENERAL CONTROLS & SHORTCUTS
+3.  MODULE 1: DASHBOARD & REAL-TIME OPERATIONS COCKPIT
+4.  MODULE 2: BOOKINGS (LOAD & RATE MANAGEMENT)
+5.  MODULE 3: TRIPS & FLEET DISPATCH (EXPENSES & TRACKING)
+6.  MODULE 4: REQUIREMENTS (LOAD ENQUIRIES & VEHICLE INDENTS)
+7.  MODULE 5: PARTIES & CLIENTS (360-DEGREE CRM & DOSSIER)
+8.  MODULE 6: TRANSPORTERS & FLEET PARTNERS (FLEET DIRECTORY)
+9.  MODULE 7: RECEIVABLES (CLIENT PAYMENTS & INFLOWS)
+10. MODULE 8: PAYABLES (FLEET OUTFLOWS & DIESEL ADVANCES)
+11. MODULE 9: MANUAL LEFTOVERS & DISPUTE CHARGES (+ ADD LEFTOVER)
+12. MODULE 10: 1-CLICK KHATA LEDGER & STATEMENT OF ACCOUNT
+13. MODULE 11: DIGITAL BILTY (LORRY RECEIPT / LR GENERATOR)
+14. MODULE 12: DIGITAL DOCUMENT ARCHIVE & POD DESK
+15. MODULE 13: REAL WHATSAPP DISPATCH HUB
+16. MODULE 14: INDIAN GST & PAN TAX COMPLIANCE SYSTEM
+17. MODULE 15: SYSTEM SETTINGS, CLEAR TEST DATA & BACKUP/RESTORE
+18. MODULE 16: HOW TO USE THIS ON ANOTHER PC / PHONE (LAN & WEB)
+19. DAY-IN-THE-LIFE: STEP-BY-STEP BROKER WORKFLOW EXAMPLE
+20. FREQUENTLY ASKED QUESTIONS & TROUBLESHOOTING
+
+================================================================================
+1. OVERVIEW: WHAT WE BUILT
+================================================================================
+LohanLogistics is an end-to-end, full-stack Transport Brokerage Management 
+System designed specifically for Indian road logistics, fleet brokers, commission
+agents, and transport contractors.
+
+It completely replaces physical diary entries, paper bilty books, chaotic WhatsApp
+records, and cumbersome Excel spreadsheets with a single, synchronized platform.
+
+Key Capabilities:
+- Live profit margin locking on every load before truck dispatch.
+- Prevention of lost revenue through a dedicated "Manual Leftovers" system for
+  halting charges, detention, and short deductions.
+- 1-Click Khata Statements with real running debit/credit ledgers that can be
+  printed on official LohanLogistics letterheads or shared instantly to WhatsApp.
+- Official Digital Bilty (LR) generation supporting Consignor, Consignee, and
+  Driver copies with automatic tax and route filling.
+- Full Indian GSTIN and PAN compliance with live state detection (Codes 01 to 36)
+  and GTA RCM (Reverse Charge Mechanism) support for unregistered truck owners.
+- Multi-device connectivity allowing access across other PCs, laptops, and phones
+  on the same office Wi-Fi, or over the web.
+
+================================================================================
+2. GENERAL CONTROLS & SHORTCUTS
+================================================================================
+1. COLLAPSIBLE / SLIDABLE SIDEBAR:
+   - What it does: Slides the left navigation panel off the screen so you have 
+     100% of the screen width for large tables, bilties, and khata ledgers.
+   - How to use:
+     * Click the "Hide Sidebar / Show Menu" button at the top-left header.
+     * KEYBOARD SHORTCUT: Press [ Ctrl + B ] on your keyboard at any time.
+
+2. TOP BAR QUICK-ACTION DOCK (Available from any page):
+   - [ Digital Bilty ]: Opens the Lorry Receipt generator modal immediately.
+   - [ + Add Leftover ]: Opens the manual balance adjustment modal.
+   - [ Party Khata ]: Opens the 1-click accounting statement ledger.
+   - [ Data Management ]: Opens system settings, clear test data, and backup tools.
+
+3. MOBILE / TABLET RESPONSIVE NAVIGATION:
+   - On screens smaller than 1024px (tablets/smartphones), clicking the hamburger 
+     menu (top-left) opens a sliding drawer navigation.
+
+================================================================================
+3. MODULE 1: DASHBOARD & REAL-TIME OPERATIONS COCKPIT
+================================================================================
+Route: / (Overview)
+Purpose: The morning command center showing your active operations, money stuck
+in the market, and immediate tasks.
+
+WHAT IS DISPLAYED:
+1. TOP KPI CARDS:
+   - Total Bookings: Count of total trips booked this month.
+   - Active Trips: Number of vehicles currently on highway transit.
+   - Total Freight Value: Total rupee turnover handled.
+   - Gross Brokerage Margin: Total profit earned between client rate and truck rate.
+
+2. FINANCIAL LIQUIDITY METRICS:
+   - Total Receivables: Exact amount corporate clients owe you.
+   - Total Payables: Exact amount you owe to fleet owners/drivers.
+   - Net Cash Position: Receivables minus Payables.
+
+3. QUICK DISPATCH SUMMARY TABLE:
+   - Shows the last 5 active loads with route, assigned truck, driver, and status.
+   - Direct button on each row to view details or dispatch.
+
+================================================================================
+4. MODULE 2: BOOKINGS (LOAD & RATE MANAGEMENT)
+================================================================================
+Route: /bookings
+Purpose: Where customer orders are recorded, profit margins are locked, and 
+trucks are assigned.
+
+HOW TO USE:
+1. CREATING A NEW BOOKING:
+   - Click the black button [+ Create Booking] at the top right.
+   - Select Client: Choose an existing client or type a company name. The system 
+     instantly verifies and displays their registered GSTIN status.
+   - Pickup City & Drop City: E.g., Pune to Delhi.
+   - Dates & Times: Choose scheduled loading date and pickup time (e.g. 09:30 AM).
+   - Vehicle Assignment: Choose vehicle type (e.g., 32 FT Container, 14 FT Open)
+     and enter Vehicle Number (e.g., MH 12 AB 1234).
+   - Assign Transporter: Choose the fleet partner supplying the vehicle.
+   - LOCKING YOUR PROFIT MARGIN:
+     * Enter Client Rate (Rs.): E.g., 48,000.
+     * Enter Transporter Rate (Rs.): E.g., 39,000.
+     * LIVE PROFIT TICKER: The system displays "Expected Margin: Rs. 9,000".
+       You never dispatch an unprofitable load!
+   - Click [Confirm & Create Booking].
+
+2. DISPATCHING & MANAGING BOOKINGS:
+   - Each booking row displays: Booking ID, Client Name, Route, Vehicle, Margin,
+     Payment Status, and Documents generated.
+   - WhatsApp Dispatch: Click the green WhatsApp icon next to any booking to copy
+     or send complete shipment details to the driver or client.
+   - Generate Bilty: Click the Bilty icon to launch the Lorry Receipt directly
+     pre-filled with this booking's data.
+
+================================================================================
+5. MODULE 3: TRIPS & FLEET DISPATCH (EXPENSES & TRACKING)
+================================================================================
+Route: /trips
+Purpose: Live tracking of long-haul round-trips (Up-load and Down-load), driver
+advances, fuel expenses, and net profit closure.
+
+HOW TO USE:
+1. TRIP STRUCTURE:
+   - Up Journey: Origin to Destination with Client Freight (e.g., Pune to Delhi, Rs. 50,000).
+   - Down Journey: Return load to avoid empty running (e.g., Delhi to Pune, Rs. 40,000).
+   - Driver Advances: Advance diesel cash and driver bhatta paid upon departure.
+
+2. TRACKING STATUSES:
+   - Up Transit: Truck moving towards first destination.
+   - Unloading Up: Truck arrived at first consignee depot.
+   - Down Transit: Return load picked up and moving back.
+   - Delivered / Closed: Load successfully delivered and audited.
+
+3. CLOSING A TRIP & PROFIT AUDIT:
+   - When a trip finishes, click [Close Trip].
+   - Enter actual fuel consumed, toll receipts, driver wages, and maintenance.
+   - System calculates: Total Revenue (Up + Down) minus Total Expenses = Net Cash Profit.
+
+================================================================================
+6. MODULE 4: REQUIREMENTS (LOAD ENQUIRIES & VEHICLE INDENTS)
+================================================================================
+Route: /requirements
+Purpose: Daily indent board where customer freight inquiries are logged before 
+a vehicle is found in the market.
+
+HOW TO USE:
+1. ADDING A REQUIREMENT:
+   - When a customer calls: "I need two 32 FT containers from Pune to Bangalore tomorrow".
+   - Click [+ Post Requirement].
+   - Enter Client, Corridor, Vehicle Type, Target Dispatch Date, and Target Rate.
+   - Status defaults to "Finding Vehicle" (Amber badge).
+
+2. CONVERTING TO A LIVE BOOKING (1-CLICK):
+   - Once your brokerage team secures a truck in the transport nagar market:
+   - Click [Convert to Booking] on that requirement.
+   - Enter the Vehicle Number and confirmed Transporter Rate.
+   - The requirement is marked "Arranged" and automatically creates a confirmed 
+     Booking in Module 2 without retyping information.
+
+================================================================================
+7. MODULE 5: PARTIES & CLIENTS (360-DEGREE CRM & DOSSIER)
+================================================================================
+Route: /clients
+Purpose: The complete corporate directory for shippers, factories, and traders.
+
+HOW TO USE:
+1. ONBOARDING A NEW PARTY:
+   - Click [+ Add New Party / Client].
+   - Enter Company Name (e.g., Tata Steel Wire Div).
+   - Contact Person, Phone, Email, and Billing Address.
+   - Enter 15-character Indian GSTIN: Notice how typing "27..." instantly shows:
+     "📍 Maharashtra (Code 27)" and automatically extracts their 10-digit PAN!
+   - Set Payment Terms (e.g., Net 15 Days, On Delivery, 50% Advance).
+   - Set Credit Limit (e.g., Rs. 5,00,000) and Opening Balance if they have 
+     past unsettled dues.
+   - Click [Onboard Client].
+
+2. 360-DEGREE CLIENT DOSSIER DRAWER:
+   - Click ANY row in the Client table to open their complete history drawer:
+   - TAB 1 (TRIPS): Every load ever transported for this client with date, route,
+     freight rate, and current delivery status.
+   - TAB 2 (LEFTOVERS): Detailed audit trail of all manual leftovers, halting 
+     deductions, or unpaid bill balances.
+   - TAB 3 (PAYMENTS): Every cheque, NEFT, UPI, or cash receipt logged for this 
+     client with bank UTR numbers.
+   - TAB 4 (INFO & COMPLIANCE): Legal company profile, registered GSTIN, PAN,
+     credit terms, and quick [+ Add GST] / [Edit GST] button.
+
+3. QUICK GSTIN EDITING:
+   - In the main client list, click the GST badge under the company name to 
+     instantly update their GSTIN without opening the full drawer.
+
+================================================================================
+8. MODULE 6: TRANSPORTERS & FLEET PARTNERS (FLEET DIRECTORY)
+================================================================================
+Route: /transporters
+Purpose: Your supplier phonebook of truck owners, fleet brokers, and drivers.
+
+HOW TO USE:
+1. ADDING A FLEET PARTNER:
+   - Click [+ Add Transporter].
+   - Enter Fleet Owner / Broker Name and Mobile Number.
+   - Enter GSTIN or PAN: If the truck owner is an individual without GST, leave
+     GST blank or check the "GTA RCM (Reverse Charge)" box. If registered, enter 
+     GSTIN to auto-fill PAN.
+   - Specify Primary Routes (e.g., Pune <-> Delhi, Mumbai <-> Bangalore).
+   - Select Available Fleet Types (e.g., 32 FT Container, 20 FT Open, 40 FT Trailer).
+   - Opening Payable: If you already owe them balance for previous trips.
+   - Click [Save Transporter].
+
+2. MONITORING PAYABLES:
+   - Table displays Total Payable (all trips completed), Total Paid (advances + 
+     settlements), and Outstanding Balance due to them.
+   - Click [Khata] on any row to open the driver/fleet ledger.
+   - Click [+ Leftover] to record driver claims (e.g., diesel reimbursement).
+
+================================================================================
+9. MODULE 7: RECEIVABLES (CLIENT PAYMENTS & INFLOWS)
+================================================================================
+Route: /receivables
+Purpose: Tracking money coming in from corporate clients and recording bank receipts.
+
+HOW TO USE:
+1. LOGGING A CLIENT PAYMENT:
+   - Click [Record Payment] at the top right.
+   - Select Party Type: "Client".
+   - Select Client Name: Choose from the dropdown.
+   - Enter Amount Received (Rs.): E.g., Rs. 35,000.
+   - Payment Mode: NEFT/RTGS, UPI, Cheque, or Cash.
+   - Reference / UTR No: Enter the bank transaction ID or cheque number.
+   - Payment Date: Date credited to your bank account.
+   - Notes: E.g., "Part payment for Delhi trip #1042".
+   - Click [Save Payment Receipt].
+   - Result: The client's outstanding balance immediately decreases, and the 
+     credit entry is posted to their Khata statement.
+
+================================================================================
+10. MODULE 8: PAYABLES (FLEET OUTFLOWS & DIESEL ADVANCES)
+================================================================================
+Route: /payables
+Purpose: Tracking money paid out to truck owners, drivers, and commission brokers.
+
+HOW TO USE:
+1. LOGGING ADVANCES & BALANCE CLEARANCES:
+   - Click [Record Payment].
+   - Select Party Type: "Transporter".
+   - Select Transporter Name.
+   - Enter Amount Paid (Rs.): E.g., Rs. 20,000 (Diesel advance) or Rs. 19,000 (Final POD clearance).
+   - Select Mode: UPI (e.g. driver Google Pay), Bank Transfer, or Cash.
+   - Enter Reference number and Notes.
+   - Click [Save Payment Receipt].
+   - Result: Your outstanding payable to that fleet owner is updated in real time.
+
+================================================================================
+11. MODULE 9: MANUAL LEFTOVERS & DISPUTE CHARGES (+ ADD LEFTOVER)
+================================================================================
+Shortcut: [+ Add Leftover Due] in the top navigation bar or client drawer.
+Purpose: Transport's biggest profit leak is forgotten deductions (unloading 
+halting, demurrage, short deductions). This tool ensures you never lose a rupee.
+
+HOW TO USE:
+1. WHEN TO USE THIS:
+   - Case A: A client holds back Rs. 3,000 for "late delivery" or "short weight".
+   - Case B: The driver was halted for 2 days at destination warehouse, and you 
+     need to bill Rs. 5,000 vehicle halting charges to the client.
+   - Case C: Transporter claims Rs. 1,500 extra toll due to highway route diversion.
+
+2. STEP-BY-STEP ENTRY:
+   - Click [+ Add Leftover Due] from the top bar.
+   - Party Type: Choose "Client (Receivable)" or "Transporter (Payable)".
+   - Select Party Name from the dropdown.
+   - Enter Leftover Amount (Rs.): E.g., 4,500.
+   - Select Reason Category:
+     * Vehicle Halting / Demurrage
+     * Short Payment / Weight Shortage Deduction
+     * Toll & Route Detour
+     * Past Unsettled Trip Balance
+     * Other Operational Adjustment
+   - Link to Booking: (Optional) Attach to a booking ID (e.g. #1042).
+   - Enter Notes: Explain the reason (e.g. "2 days unloading delay at Delhi depot").
+   - Click [Record Leftover Balance].
+   - Instant effect: The party's balance increases, an audit entry is created, 
+     and it is locked into their Khata ledger.
+
+================================================================================
+12. MODULE 10: 1-CLICK KHATA LEDGER & STATEMENT OF ACCOUNT
+================================================================================
+Shortcut: [Party Khata] in the top navigation bar, or [Khata] on any client row.
+Purpose: Eliminates end-of-month reconciliation arguments by generating an 
+itemized, running debit/credit statement on formal letterhead.
+
+HOW TO USE:
+1. SWITCHING KHATAS:
+   - Toggle between [Client Khata] (Receivables) and [Transporter Khata] (Payables).
+   - Select Party Name from the dropdown.
+
+2. DATE FILTERING:
+   - Select: "Complete History", "This Month", "Last 30 Days", or "Custom Dates".
+
+3. RUNNING LEDGER TABLE:
+   - Every trip freight is listed as a DEBIT.
+   - Every payment received is listed as a CREDIT.
+   - Every leftover or halting fee is listed as an ADJUSTMENT.
+   - Running Balance column recalculates row-by-row.
+   - Bottom shows Net Balance: Exactly what they owe you today.
+
+4. EXPORTING & SHARING:
+   - [Print / Save PDF]: Formats the statement on formal LohanLogistics letterhead
+     with company GSTIN (27AAAAA0000A1Z5), PAN, date, and signature boxes. All 
+     buttons and sidebars are automatically hidden for clean physical printing.
+   - [CSV]: Downloads an Excel spreadsheet of the ledger.
+   - [Share WhatsApp]: Automatically compiles a formatted message of total billed,
+     total paid, and net leftover balance for WhatsApp dispatch.
+
+================================================================================
+13. MODULE 11: DIGITAL BILTY (LORRY RECEIPT / LR GENERATOR)
+================================================================================
+Shortcut: [Digital Bilty] in the top navigation bar, or from /documents.
+Purpose: Generates legally compliant consignment notes that replace manual 
+handwritten carbon-copy bilty books.
+
+HOW TO USE:
+1. SELECTING LOAD:
+   - At the top of the modal, pick any Booking from the dropdown.
+   - Auto-population: Automatically loads Consignor Company, Consignor GSTIN, 
+     Origin Address, Destination City, Vehicle No, Driver, and Agreed Freight.
+
+2. EDITABLE CONSIGNEE (RECEIVER):
+   - Enter Consignee Company Name (e.g., North India Logistics Hub).
+   - Delivery Address, City, State, PIN code, and Consignee GSTIN.
+
+3. DRIVER & STATUTORY COMPLIANCE:
+   - Driver Name and Mobile Number.
+   - Driver License Number (e.g., DL-142018009876).
+   - 12-Digit E-Way Bill Number (e.g., 841920491829).
+
+4. CARGO GOODS SPECIFICATION:
+   - Packages Count: E.g., "180 Boxes / 32 Pallets".
+   - Description of Goods: E.g., "Industrial Machined Components & Spare Parts".
+   - Weight: Actual Weight (14.5 MT) and Charged Weight (15.0 MT).
+
+5. FREIGHT BREAKDOWN:
+   - Basic Freight + Loading Charges + Halting Charges + Toll Charges = Total Freight.
+   - Minus Advance Paid = Balance Leftover Due.
+   - Select Terms: [TO PAY] (collected from consignee), [PAID] (paid in advance),
+     or [TO BE BILLED] (corporate credit account).
+
+6. SELECT COPY TYPE:
+   - Choose [Consignor Copy], [Consignee Copy], or [Driver / Lorry Copy].
+
+7. PRINTING & ARCHIVING:
+   - [Print Bilty (LR)]: Prints directly to your office printer.
+   - [Save to Documents]: Archives the digital record permanently in /documents.
+   - [Share WhatsApp]: Sends complete LR particulars to the driver or client.
+
+================================================================================
+14. MODULE 12: DIGITAL DOCUMENT ARCHIVE & POD DESK
+================================================================================
+Route: /documents
+Purpose: Audit desk for Delivery Proofs (POD), Tax Invoices, and E-Way Bills.
+
+HOW TO USE:
+1. FILTERING DOCUMENTS:
+   - Filter by status: All, Verified, Pending Review, or Missing.
+2. PREVIEWING & AUDITING:
+   - Click [Preview] on any document to see its full sheet:
+   - Tax Invoice: Shows SAC Code 996511 (GTA freight), taxable amount, client GSTIN.
+   - Proof of Delivery (POD): Shows warehouse receiving bay stamp, unloading time,
+     and consignee verification seal.
+   - E-Way Bill: Shows Part-B vehicle validity and active transit status.
+3. QUICK STATUS TOGGLE:
+   - Directly click [Mark as Verified], [Needs Review], or [Missing] to update status.
+4. DELETING / CLEANING:
+   - Click the red trash icon to delete void or canceled documents.
+
+================================================================================
+15. MODULE 13: REAL WHATSAPP DISPATCH HUB
+================================================================================
+Whenever you click [Share WhatsApp] anywhere in the app, the universal WhatsApp
+modal opens with 3 options:
+
+HOW TO USE:
+- OPTION 1: DIRECT TO NUMBER
+  * Enter the 10-digit mobile number of the client, driver, or fleet owner.
+  * Click [Send to WhatsApp] - opens WhatsApp Web or your WhatsApp Desktop app
+    directly into a chat with that specific number.
+- OPTION 2: UNIVERSAL CONTACT PICKER
+  * Click [Open WhatsApp (Pick Any Contact)] - opens WhatsApp without locking
+    to a number so you can pick any group, driver union group, or saved contact.
+- OPTION 3: COPY MESSAGE TEXT
+  * Click [Copy Message Text] to copy the pre-formatted text to your clipboard.
+    You can paste it into SMS, Email, Skype, or WhatsApp.
+
+================================================================================
+16. MODULE 14: INDIAN GST & PAN TAX COMPLIANCE SYSTEM
+================================================================================
+Transport brokerage has strict tax compliance rules in India. The app handles 
+this automatically across all screens:
+
+KEY COMPLIANCE RULES BUILT IN:
+1. 15-CHARACTER INDIAN GSTIN VALIDATION:
+   - Enforces format: ^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$
+2. AUTOMATIC STATE DETECTION:
+   - First 2 digits map to all 36 Indian states and union territories.
+   - Example: Typing "27..." displays "📍 Maharashtra (Code 27)".
+   - Example: Typing "07..." displays "📍 Delhi (Code 07)".
+   - Example: Typing "06..." displays "📍 Haryana (Code 06)".
+3. AUTOMATIC PAN EXTRACTION:
+   - Characters 3 to 12 of any GSTIN are strictly the entity's 10-digit PAN.
+   - The app extracts this automatically—you never have to type PAN twice!
+4. GTA REVERSE CHARGE MECHANISM (RCM):
+   - Under Indian GST law, individual truck owners are frequently unregistered,
+     and tax is paid by the consignor/consignee under RCM.
+   - The app includes an "Unregistered under GST (GTA RCM)" option for transporters.
+
+================================================================================
+17. MODULE 15: SYSTEM SETTINGS, CLEAR TEST DATA & BACKUP/RESTORE
+================================================================================
+Shortcut: Click [Data Management] in the top header, or click the company card 
+in the bottom-left sidebar.
+
+WHAT YOU CAN DO:
+1. CLEAR TEST DATA (FRESH START FOR YOUR BUSINESS):
+   - Option A: Complete Fresh Start (Wipe Everything):
+     * Wipes all demo bookings, trips, dummy clients (ABC Industries, Tata Steel),
+       transporters (XYZ Transport), payments, bilties, and leftovers.
+     * Leaves you with a 100% clean, 0-record slate ready for real business.
+     * Safety Check: Requires typing "CLEAR" in capital letters to confirm.
+   - Option B: Clear Trips & Financials Only:
+     * If you have already added your real clients and transporters, this wipes
+       test trips and resets balances to Rs. 0 while keeping your saved contacts!
+   - Option C: Restore Demo Test Dataset:
+     * Reloads sample demo bookings and trucks anytime you want to test features.
+
+2. BACKUP & RESTORE:
+   - [Download Backup File (.json)]: 1-click download of all data to your computer.
+   - [Select Backup File to Restore]: Upload a previously saved backup file to 
+     restore your entire database offline.
+
+3. OPERATOR SETTINGS:
+   - Change the name displayed in the sidebar footer from "Lohan Logistics" to 
+     any custom company or branch label (e.g. "Lohan Logistics - Pune Branch").
+
+================================================================================
+18. MODULE 16: HOW TO USE THIS ON ANOTHER PC / PHONE (LAN & WEB)
+================================================================================
+You can use LohanLogistics across multiple computers and phones using 3 methods:
+
+METHOD 1: INSTANT ACCESS ON SAME WI-FI / OFFICE NETWORK (Free, 2 Minutes)
+- Both the frontend and backend are configured to listen on all interfaces (0.0.0.0).
+- Step 1: On this host PC, your local network IP is: 192.168.31.248
+- Step 2: On your second PC, laptop, or phone (connected to the same Wi-Fi):
+  Open your web browser (Chrome, Edge, Safari) and type:
+  http://192.168.31.248:5173
+- That's it! Any booking, payment, or bilty created on the other PC immediately 
+  saves to this main PC's database.
+
+METHOD 2: ACCESS OVER THE INTERNET FOR FREE (CLOUDFLARE QUICK TUNNEL)
+- If you are traveling or working from home:
+- Step 1: Download the free tool "cloudflared" on your host PC.
+- Step 2: Open PowerShell and run:
+  cloudflared tunnel --url http://localhost:5173
+- Step 3: Cloudflare gives you a free HTTPS link (e.g. https://xxxx.trycloudflare.com).
+  You can open this link on ANY computer or smartphone in the world!
+
+METHOD 3: 24/7 PERMANENT CLOUD DEPLOYMENT (RENDER + VERCEL)
+- If you want the app running online 24/7 without keeping your PC powered on:
+- Backend: Deploy the "backend" folder to Render.com or Railway.app (Free Node service).
+- Frontend: Deploy the "frontend" folder to Vercel.com (Free React hosting).
+- Set Environment Variable in Vercel:
+  VITE_API_BASE = https://your-backend.onrender.com/api
+- You receive a permanent .vercel.app link accessible anywhere.
+
+================================================================================
+19. DAY-IN-THE-LIFE: STEP-BY-STEP BROKER WORKFLOW EXAMPLE
+================================================================================
+Here is how an Indian transport broker uses this app throughout a normal business day:
+
+09:00 AM - MORNING AUDIT:
+- Open Dashboard (/). Check Active Trips on highway transit and review pending 
+  Receivables from clients.
+
+09:30 AM - RECORDING A NEW LOAD:
+- Client "Tata Steel Wire Div" calls needing a 32 FT Container from Pune to Delhi.
+- Go to Bookings -> [+ Create Booking].
+- Select "Tata Steel Wire Div". Route: Pune -> Delhi. Vehicle: 32 FT Container.
+- Enter Client Rate: Rs. 50,000. Transporter Rate: Rs. 41,000.
+- System confirms expected margin: Rs. 9,000. Click Confirm.
+
+10:30 AM - DISPATCH & BILTY GENERATION:
+- Truck arrives at loading dock (MH 12 AB 1234).
+- Click [Digital Bilty] from top bar. Select the Tata Steel booking.
+- Consignor GSTIN and address auto-fill. Enter Consignee details and driver license.
+- Click [Print Bilty (LR)] for the physical copy.
+- Click [Share WhatsApp] to send the LR copy to the driver's phone.
+
+02:00 PM - RECORDING A VEHICLE HALTING DEDUCTION:
+- Driver calls from Delhi: Factory warehouse is crowded, unloading delayed by 24 hours.
+- Broker calls Tata Steel: Agreed on Rs. 3,000 halting charges.
+- Click [+ Add Leftover Due] in top bar.
+- Party: Tata Steel Wire Div. Amount: Rs. 3,000. Reason: Vehicle Halting.
+- Click [Record Leftover]. The client's ledger automatically updates to reflect 
+  Rs. 53,000 total due.
+
+05:00 PM - LOGGING ADVANCE RECOVERY:
+- Tata Steel accounts team transfers Rs. 30,000 advance via NEFT.
+- Go to Receivables -> [Record Payment].
+- Client: Tata Steel Wire Div. Amount: Rs. 30,000. Mode: NEFT. Enter Bank UTR.
+- Click [Save Payment Receipt]. Remaining leftover due becomes Rs. 23,000.
+
+06:00 PM - SENDING MONTH-END KHATA STATEMENT:
+- Click [Party Khata] in top bar. Select "Tata Steel Wire Div".
+- Full ledger displays: Trip Freight (Rs. 50,000) + Halting (Rs. 3,000) - NEFT (Rs. 30,000) = Rs. 23,000 Leftover Balance.
+- Click [Share WhatsApp] -> [Send to WhatsApp] to send the formal statement 
+  directly to Tata Steel's dispatch manager.
+
+================================================================================
+20. FREQUENTLY ASKED QUESTIONS & TROUBLESHOOTING
+================================================================================
+Q1: Where is my data stored?
+A: In backend/data/db.json on your computer. It is saved in plain JSON format 
+   and automatically backed up every time you make an edit.
+
+Q2: What happens if I accidentally delete a client or trip?
+A: Open [Data Management] -> [Backup & Restore] to download backups regularly. 
+   You can restore any previous backup in 1 second.
+
+Q3: Can I run this offline without an active internet connection?
+A: Yes! The entire app runs locally on your PC. You only need an internet connection
+   if you want to share via WhatsApp Web or access it from outside the office.
+
+Q4: How do I restart the servers if my PC restarts?
+A: Open two PowerShell windows:
+   Window 1 (Backend):
+     cd e:\Son\transport-broker\backend
+     npm run dev
+   Window 2 (Frontend):
+     cd e:\Son\transport-broker\frontend
+     npm run dev
+   Then open http://localhost:5173 in your browser.
+
+================================================================================
+LOHAN LOGISTICS - COMMERCIAL FLEET & FREIGHT BROKERAGE SYSTEM
+All Rights Reserved | Ready for Production Daily Use
+================================================================================
